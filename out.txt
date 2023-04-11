@@ -1,0 +1,71 @@
+set Register(index , value(Hex)) 
+Register Bank [8]: 
+	0x00	0xdd	0x01	0x00	0x00	0x00	0x00	0x00	
+Memory: 
+	0x00 0xfe
+0xfe 0x3f
+
+--------------------------------------------------
+ Fetch:  PC 0 
+ 	PC(E)  MDR(E,L) 
+ 	PC(I)
+	 MDR: LDM  R3  I  #fe  
+IR :  0000 011 xxx xxx 1 11111110
+temp(E) MAR(E,L) 
+ RAM(E) R3(L)
+Flags: Z V C N =>0010
+Register Bank [8]: 
+	0x00	0xdd	0x01	0x3f	0x00	0x00	0x00	0x00	
+Memory: 
+	0x00 0xfe
+0xfe 0x3f
+
+--------------------------------------------------
+ Fetch:  PC 1 
+ 	PC(E)  MDR(E,L) 
+ 	PC(I)
+	 MDR: SDM  R3  I  #01  
+IR :  0001 011 xxx xxx 1 00000001
+temp(E),MAR(E,L)
+ RAM(L) R3(E)
+Flags: Z V C N =>0010
+Memory: 
+	0x00 0xfe
+0x01 0x3f
+0xfe 0x3f
+
+--------------------------------------------------
+ Fetch:  PC 2 
+ 	PC(E)  MDR(E,L) 
+ 	PC(I)
+	 MDR: ADD  R0  R1  R1  I  ASR  R2  
+IR :  0011 000 001 001 1 10010xxx
+R1(E) temp(E) Barrel(E) 
+R1(E) Barrel(E) ALU(L)
+ R0(L) ALU(E)
+Flags: Z V C N =>0111
+Register Bank [8]: 
+	0xcb	0xdd	0x01	0x3f	0x00	0x00	0x00	0x00	
+Memory: 
+	0x00 0xfe
+0x01 0x3f
+0xfe 0x3f
+
+--------------------------------------------------
+ Fetch:  PC 3 
+ 	PC(E)  MDR(E,L) 
+ 	PC(I)
+	 MDR: CSB  R5  I  #fe  
+IR :  1000 101 xxx xxx 1 xxxxxxxx
+temp(E) MAR(E,L) 
+RAM(E) ALU(L) 
+ ALU(E) R5(L)
+Flags: Z V C N =>0111
+Register Bank [8]: 
+	0xcb	0xdd	0x01	0x3f	0x00	0x06	0x00	0x00	
+Memory: 
+	0x00 0xfe
+0x01 0x3f
+0xfe 0x3f
+
+--------------------------------------------------

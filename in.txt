@@ -1,0 +1,5 @@
+LDM R3 I #fe
+SDM R3 I #01
+ADD R0 R1 R1 I ASR R2
+CSB R5 I #fe
+
