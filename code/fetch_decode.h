@@ -1,7 +1,7 @@
 
 void print_fetch(int pc, vector<string> mdr)
 {
-    cout << " Fetch:  PC " << pc << " \n \t";
+    cout << " Fetch: \n\t PC " << pc << " \n \t";
     cout << "PC(E)  MDR(E,L)"
          << " \n \t";
     cout << "PC(I)" << endl;
@@ -21,7 +21,7 @@ void print_decode(int op, int Rd, int Rs1, int Rs2, int I, string Imd, string ba
     bitset<3> brd(Rd), brs1(Rs1), brs2(Rs2), brm(Rm);
     // debug(op)
     assert(Rd != -1);
-    cout << "IR :  " << bop << " ";
+    cout << "Decode: \n\tIR :  " << bop << " ";
 
     {
         if (Rd == -1)

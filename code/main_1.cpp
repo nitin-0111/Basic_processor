@@ -80,7 +80,8 @@ signed main()
         // debug(opCode[opr], Rd, Rs1, Rs2, I, Imd, barRot, Rm);
         print_decode(opCode[opr], Rd, Rs1, Rs2, I, Imd, barRot, Rm);
        
-
+      cout<<"Excute :\n \t";
+      
         switch (opCode[opr])
         {
         case 0:
@@ -124,6 +125,7 @@ signed main()
         // if (input == "-1")
         //     break;
         cout << breakLine << endl;
+       
     }
 
     return 0;
