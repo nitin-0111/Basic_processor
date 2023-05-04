@@ -4,7 +4,7 @@
 using namespace std;
 
 #ifndef ONLINE_JUDGE 
- #include</home/nitin/Nitin/Coding_and_Web/debug.cpp>
+ #define debug(x...)
  #else
  #define debug(x...)
  #endif 
