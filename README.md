@@ -20,7 +20,7 @@ Key Points:
 In this processor we can initialize the number of register used as well as memory
 
 Ex:
-
+```
 2 // number of registers used
 
 R0 #3F //initialize R0 with content
@@ -30,14 +30,14 @@ R1 #40 //initialize R1 with content
 1 //number of memory used
 
 #3F #A1 ..initialize memory with content
-
-**ii) Harvard Architecture:**
+```
+ ## **ii) Harvard Architecture:**
 
 In this processor Harvard Architecture cpu uses separate storage/memory and separate bus for data and microinstruction .
 
 ![](Aspose.Words.1df29f51-25a6-4b00-86e4-4730423293f2.003.png)
 
-**iii)Barrel Shifter:**
+## **iii)Barrel Shifter:**
 
 Barrel shifter is used to shift a data word by a specified number of bits in one clock cycle without affecting registers data during arithmetic and logical operation .
 
@@ -59,7 +59,7 @@ Rs2⇒Source Register 2
 
 I⇒can be used as MRI or barrel shifter
 
-Instruction Register Format:
+# Instruction Register Format:
 
 ![](Aspose.Words.1df29f51-25a6-4b00-86e4-4730423293f2.005.png)
 
@@ -118,7 +118,7 @@ i)Via Register
 ⇒We specify the register number (0-7) ans last three bits of value stored at that register is taken as amount of rotation
 
 Eg.
-
+```
 ADD R1 R2 R3 I LSL R5
 
 R5[0:2] ⇒last three bits of R5 is taken as amount of rotation
@@ -135,7 +135,7 @@ ii)Via Immediate value
 
   LSL ⇒type of rotation
 
-
+```
 
 |S.No.|Type of Instruction|Opcode|
 | - | - | - |
@@ -156,7 +156,7 @@ i)**Register**: In case of register value of register is loaded in that column
 2) **Immediate** :In case of Immediate value is loaded in Immediate column
 
    Eg.
-
+```
 I =1 LSL #3F
 
 I=1 LSL R2 (R2=8)
@@ -186,8 +186,10 @@ I=0 Rd(L) temp(E)
 I=1 temp(E) MAR(E,L)
 
 RAM(E) Rd(L)                 flags=[Z,N,C,V] {affected flags}
-
-Eg . LDM Rd #3F flags=[0,0,0,0] LDM Rd I #8F flags=[0,0,1,0]
+```
+Eg .
+```
+LDM Rd #3F flags=[0,0,0,0] LDM Rd I #8F flags=[0,0,1,0]
 
 ii)SDM![](Aspose.Words.1df29f51-25a6-4b00-86e4-4730423293f2.010.png)
 
@@ -210,8 +212,11 @@ I=1 Rd←Rs <<(rotate by some bits)
 I=0 Rs(E) Rd(L)
 
 I=1 Rs(E) Bar(L) temp(E)
+```
 
-Eg. MOV Rd Rs I LSL #3
+Eg. 
+```
+MOV Rd Rs I LSL #3
 
 flags=[Z,N,C,V] {affected flags}
 
@@ -242,19 +247,19 @@ Rs1(E) Barrel (E) ALU (L)
 Rd(L) ALU (E)
 
 //flags will be affected
-
+```
 ex.
-
+```
 I=0 ADD Rd Rs1 Rs2
 
 ADD Rd Rs1 #Imd
 
 I=1 ADD R1 R2 R3 I LSL #Imd
-
+```
 5) SUB,AND,XOR,OR → same as ADD instruction
 
 vii) CSB (count set bit) I=0![](Aspose.Words.1df29f51-25a6-4b00-86e4-4730423293f2.013.png) CSB Rd Rs1
-
+```
 Rs1(E) ALU(L) ALU(E) Rd(L)
 
 I=0 CSB Rd \_ #Imd
@@ -264,8 +269,8 @@ temp(E) ALU(L) ALU(E) Rd(L)
 I=1 CSB Rd I #Imd temp(E) MAR(E,L)
 
 RAM(E) ALU(L) ALU(E) Rd(L)
-
-Steps for Simulation
+```
+# Steps for Simulation
 
 i)Open the file the config.txt file and set the registers and memory as per requirement and close after configure file
 
@@ -301,7 +306,7 @@ Register Bank [8]:
 0xfe 0x3f
 
 \--------------------------------------------------
-
+```
 Fetch:
 
 PC 0
@@ -329,9 +334,10 @@ Register Bank [8]:
 0x00 0xfe
 
 0xfe 0x3f
-
+```
 \--------------------------------------------------
 
+```
 Fetch:
 
 PC 1
@@ -355,9 +361,10 @@ RAM(L) R3(E) Flags: Z V C N ⇒0010 Memory:
 0x01 0x3f
 
 0xfe 0x3f
-
+```
 \--------------------------------------------------
 
+```
 Fetch:
 
 PC 2
@@ -389,9 +396,10 @@ Register Bank [8]:
 0x01 0x3f
 
 0xfe 0x3f
-
+```
 \--------------------------------------------------
 
+```
 Fetch:
 
 PC 3
@@ -423,7 +431,7 @@ Register Bank [8]:
 0x01 0x3f
 
 0xfe 0x3f
-
+```
 \--------------------------------------------------
 
 ![](Aspose.Words.1df29f51-25a6-4b00-86e4-4730423293f2.018.png)
