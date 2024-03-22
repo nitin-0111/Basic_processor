@@ -1,4 +1,4 @@
- -by **Nitin Singh**
+ -- by **Nitin Singh**
 Refer - [Doc](https://github.com/nitin-0111/Basic_processor/blob/main/Comp%20Arch%20write%20up.pdf)
 
 **INDEX**
