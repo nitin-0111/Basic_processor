@@ -15,7 +15,7 @@ Refer - [Doc](https://github.com/nitin-0111/Basic_processor/blob/main/Comp%20Arc
 
 Key Points:
 
-**i)Registers are Configurable:**
+**i)Registers are Configurable: **
 
 In this processor we can initialize the number of register used as well as memory
 
